@@ -31,11 +31,13 @@ class People extends Component {
     }
   }
   componentDidMount () {
-    fetch(`https://hn.algolia.com/api/v1/search`, {method: 'get'}).then((response) => {
-      return response.json()
-    }).then((data) => {
-      this.setState({people: data.hits})
-    })
+    setTimeout(() => {
+      fetch(`https://hn.algolia.com/api/v1/search`, {method: 'get'}).then((response) => {
+        return response.json()
+      }).then((data) => {
+        this.setState({people: data.hits})
+      })
+    }, 2000)
   }
   render () {
     return (

@@ -12,8 +12,6 @@ SearchNews.propTypes = {
   handleChange: React.PropTypes.func.isRequired
 }
 
-
-
 /*
 Catatan :
 pada return diatas: jika menggunakan form seperti dibawah ini

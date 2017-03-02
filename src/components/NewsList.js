@@ -1,4 +1,5 @@
 import React from 'react'
+import NewsItem from './NewsItem'
 
 export const NewsList = (props) => {
   return (
@@ -8,11 +9,7 @@ export const NewsList = (props) => {
               return data.title === null ? '' : data.title
             }).map((item) => {
               return (
-                <div>
-                    <li key={item.objectID}>
-                        <a href={item.url} target="_blank">{item.title}</a>
-                    </li>
-                </div>
+                <NewsItem item={item}/>
               )
             })}
         </ul>
@@ -20,7 +17,10 @@ export const NewsList = (props) => {
   )
 }
 
-//Note : digunakan untuk memfilter data yang kosong
+// Note : digunakan untuk memfilter data yang kosong
 // filter((data) => {
 //     return data.title === null ? '' : data.title
 // })
+
+//     <NewsItem item={item}/> bisa diganti dengan dulu {...item}, jadi ketika dikirim cukup dibaca dengan props.objectID,
+// jika tidak menggunakan ... maka dipanggil dnegan props.item.objectID
